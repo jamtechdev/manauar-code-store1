@@ -2261,3 +2261,16 @@ class Example_List_Table extends WP_List_Table{
 
                 echo $attach_id;
          ?>
+	  
+	 	 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mobile API Reigister end Point ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	  <?php 
+	  add_action('rest_api_init', function () {
+    
+    register_rest_route('mobileapi/v1', '/make_payment', array(
+        'methods' => 'POST',
+        'callback' => 'callback_make_payment',
+    ));
+	  
+	  ?>
